@@ -19,6 +19,7 @@ After everything your `chrome` folder should look something like this
 ![recommended directory preview](directory_preview.png)
 
 ## Todo
+- [ ] scroll overflow sidebar
 - [ ] hideable sidebar
 - [ ] minimal sidebar support
 - [ ] reactive urlbox (really small and hard to use atm)
