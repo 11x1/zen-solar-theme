@@ -1,573 +1,738 @@
 :root {
-  src: url("ProggyClean.ttf");
-  font-family: 'ProggyCleanTT', 'Verdana' !important;
-  font-size: 16px !important;
-  --accent: #a590d7;
-  --sidebar: #111111;
+    src: url("ProggyClean.ttf");
+    font-family: "ProggyCleanTT", "Verdana" !important;
+    font-size: 16px !important;
+    --accent: #a590d7;
+    --sidebar: #111111;
 
-  --bg: #151515;
+    --bg: #151515;
 
-  --border: #43475c;
-  --border-el: #232323;
-  --bg-el-t: #202020;
-  --bg-el-b: #1e1e1e;
+    --border: #43475c;
+    --border-el: #232323;
+    --bg-el-t: #202020;
+    --bg-el-b: #1e1e1e;
 
-  --active-text: #fff;
-  --inactive-text: #ffffff60;
+    --active-text: #fff;
+    --inactive-text: #ffffff60;
 
-  --pad-header: 40px;
+    --pad-header: 40px;
 
-  --zen-panel-radius: 3px !important;
+    --zen-panel-radius: 3px !important;
+}
+
+#zen-tabbox-wrapper {
+    --zen-border-radius: 0px !important;
 }
 
 #browser {
-  display: grid !important;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr;
-
-  max-height: calc( 100% - 11px ) !important;
-
-  max-width: fit-content !important;
-  position: relative !important;
-
-  & #navigator-toolbox {
-    padding-top: 1rem;
-    height: 100% !important;
-    flex: 1 !important;
-
-    resize: horizontal !important;
-    overflow: hidden !important;
-
-    min-width: 246px !important;
-
-  }
-
-  & #appcontent {
-    grid-row-start: 1 !important;
-    height: min-content !important;
-    padding: 0 .4rem !important;
-
-    width: 100% !important;
-
-    flex: 0 !important;
-
-    position: relative !important;
     display: grid !important;
+    grid-template-rows: auto 1fr;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat( 10, auto-fit );
 
+    max-height: calc(100% - 11px) !important;
 
-    #zen-tabbox-wrapper {
-      position: absolute !important;
+    max-width: fit-content !important;
+    position: relative !important;
 
-      z-index: 9 !important;
+    & #navigator-toolbox {
+        padding-top: 1rem;
+        height: 100% !important;
+        flex: 1 !important;
 
-      left: calc( 100% + .6rem );
+        resize: horizontal !important;
+        overflow: hidden !important;
 
-      width: calc( 100vw - 100% - .6rem ) !important;
-      height: calc( 100vh - var( --pad-header ) ) !important;
+        min-width: 246px !important;
     }
 
-    #zen-appcontent-navbar-container {
-      border: 1px solid var( --border-el ) !important;
-      position: relative !important;
-      background: var( --sidebar ) !important;
+    & #appcontent {
+        grid-row-start: 1 !important;
+        height: min-content !important;
+        padding: 0 0.4rem !important;
 
-      width: 1fr !important;
-      max-width: 1fr !important;
+        width: 100% !important;
 
-      &::before {
-        content: 'controls';
-        position: absolute;
-        top: 0;
-        left: .4rem;
-        transform: translateY( -50% );
-        font-weight: 800;
+        flex: 0 !important;
 
-        padding: 0 4px;
+        position: relative !important;
+        display: grid !important;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, auto-fit);
 
-        background-image: linear-gradient(180deg, transparent 2px, var( --sidebar ) 10px );    width: fit-content;
-        height: fit-content;
-        width: auto;
+        #zen-tabbox-wrapper {
+            position: absolute !important;
 
-        z-index: 99 !important;
-      }
+            z-index: 9 !important;
 
-      #nav-bar {
-        display: flex !important;
-        flex-direction: column-reverse;
-        flex-wrap: wrap !important;
+            left: calc(100% + 0.6rem);
 
-        width: 100%;
-/*         min-width: 600px !important;; */
+            width: calc(100vw - 100% - 0.6rem) !important;
+            height: calc(100vh - var(--pad-header)) !important;
+        }
 
-        & #nav-bar-customization-target {
-          display: grid;
-          grid-template-columns: repeat( 3, 1fr );
-          grid-template-rows: repeat( auto-fit, 1fr);
+        #zen-appcontent-navbar-container {
+            border: 1px solid var(--border-el) !important;
+            position: relative !important;
+            background: var(--sidebar) !important;
 
-          max-width: 100%;
-          padding: 0 .6rem !important;
-          padding-top: .4rem !important;
+            width: 1fr !important;
+            max-width: 1fr !important;
 
-          > * {
-            order: 2 !important;
-          }
+            &::before {
+                content: "controls";
+                position: absolute;
+                top: 0;
+                left: 0.4rem;
+                transform: translateY(-50%);
+                font-weight: 800;
 
-          & #urlbar-container, & #wrapper-urlbar-container {
-            grid-row-start: 1;
-            grid-column-start: 1;
-            grid-column-end: 6;
+                padding: 0 4px;
 
-            width: 100% !important;
-            flex: 1 !important;
-            margin: 0 !important;
+                background-image: linear-gradient(
+                    180deg,
+                    transparent 2px,
+                    var(--sidebar) 10px
+                );
+                width: fit-content;
+                height: fit-content;
+                width: auto;
 
-            #urlbar {
-              padding: 0 !important;
+                z-index: 99 !important;
             }
-          }
 
-          & .toolbarbutton-1 {
-            width: min-content !important;
-          }
-        }
+            #nav-bar {
+                display: flex !important;
+                flex-direction: column-reverse;
+                flex-wrap: wrap !important;
 
-        & > * {
-          order: 2 !important;
-        }
+                width: 100%;
+                /*         min-width: 600px !important;; */
 
-        & #nav-bar-overflow-button {
-          order: 1 !important;
-        }
+                & #nav-bar-customization-target {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(auto-fit, 1fr);
 
-        & :is( .titlebar-buttonbox-container, #PanelUI-button ) {
-          position: fixed !important;
-          right: .6rem !important;
-          top: .2rem !important;
-          padding: 0 !important;
-        }
+                    max-width: 100%;
+                    padding: 0 0.6rem !important;
+                    padding-top: 0.4rem !important;
 
-        & #PanelUI-button {
-          right: 10rem !important;
-          top: .1rem !important;
+                    > * {
+                        order: 2 !important;
+                    }
+
+                    & #urlbar-container,
+                    & #wrapper-urlbar-container {
+                        grid-row-start: 1;
+                        grid-column-start: 1;
+                        grid-column-end: 6;
+
+                        width: 100% !important;
+                        flex: 1 !important;
+                        margin: 0 !important;
+
+                        #urlbar {
+                            padding: 0 !important;
+                        }
+                    }
+
+                    & .toolbarbutton-1 {
+                        width: min-content !important;
+                    }
+                }
+
+                & > * {
+                    order: 2 !important;
+                }
+
+                & #nav-bar-overflow-button {
+                    order: 1 !important;
+                }
+
+                & :is(.titlebar-buttonbox-container, #PanelUI-button) {
+                    position: fixed !important;
+                    right: 0.6rem !important;
+                    top: 0.2rem !important;
+                    padding: 0 !important;
+                }
+
+                & #PanelUI-button {
+                    right: 10rem !important;
+                    top: 0.1rem !important;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 #zen-main-app-wrapper {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  background: var( --bg ) !important;
+    background: var(--bg) !important;
 
-  padding-top: var( --pad-header );
-  &::before {
-    position:absolute;
-    content: 'Welcome to Zen, franz.';
-    padding: .4rem;
-    padding-left: 1rem;
-    top: 0 !important;
-    z-index: 9;
-
-    background: linear-gradient( 90deg, var( --inactive-text ) 120px, var( --active-text ) 120px );
-    background-clip: text;
-    color: transparent;
-  }
-
-  :root[inFullscreen] & {
-    padding: .6rem !important;
+    padding-top: var(--pad-header);
     &::before {
-      content: '' !important;
+        position: absolute;
+        content: "Welcome to Zen, franz.";
+        padding: 0.4rem;
+        padding-left: 1rem;
+        top: 0 !important;
+        z-index: 9;
+
+        background: linear-gradient(
+            90deg,
+            var(--inactive-text) 120px,
+            var(--active-text) 120px
+        );
+        background-clip: text;
+        color: transparent;
     }
-  }
+}
+
+:root[inFullscreen] {
+    #zen-main-app-wrapper {
+        padding: 0.6rem !important;
+        &::before {
+            content: "" !important;
+        }
+    }
+
+    #browser {
+        width: 0 !important;
+        max-width: 0 !important;
+        grid-template-columns: 0px;
+
+        #zen-tabbox-wrapper {
+            margin-left: -25px !important;
+            min-width: calc(100vw - 5px) !important;
+
+            min-height: calc(100vh - 5px) !important;
+        }
+    }
 }
 
 #TabsToolbar {
-  gap: .6rem;
-  padding: 0 .4rem !important;
-  overflow: visible !important;
+    gap: 0.6rem;
+    padding: 0 0.4rem !important;
+    overflow: visible !important;
 
-  #newtab-button-container {
-    display: none !important;
-  }
-
-  #TabsToolbar-customization-target {
-    display: flex !important;
-    flex-direction: column !important;
-    align-content: center;
-    padding: .6rem !important;
-    gap: 0rem;
-
-    border: 1px solid var( --border-el ) !important;
-    margin: 0 !important;
-    padding: 1rem !important;
-
-    position: relative !important;
-
-    background: var( --sidebar ) !important;
-
-    &::before {
-        content: 'tabs';
-        position: absolute;
-        top: 0;
-        left: .4rem;
-        transform: translateY( -50% );
-        font-weight: 800;
-
-        padding: 0 4px;
-
-        background-image: linear-gradient(180deg, transparent 2px, var( --sidebar ) 10px );    width: fit-content;
-        height: fit-content;
-        width: auto;
-
-        z-index: 99 !important;
-      }
-
-    #zen-workspaces-button {
-      margin: 0 !important;
+    #newtab-button-container {
+        display: none !important;
     }
 
-    #tabbrowser-arrowscrollbox {
-      overflow: scroll;
-      height: 100%;
+    #TabsToolbar-customization-target {
+        display: flex !important;
+        flex-direction: column !important;
+        align-content: center;
+        padding: 0.6rem !important;
+        gap: 0rem;
 
-      tab {
-        background: none !important;
-        text-transform: lowercase !important;
+        border: 1px solid var(--border-el) !important;
+        margin: 0 !important;
+        padding: 1rem !important;
 
-        .tab-icon-image {
-          --size: 14px;
-          width: var( --size ) !important;
-          height: var( --size ) !important;
-        }
+        position: relative !important;
+
+        background: var(--sidebar) !important;
 
         &::before {
-          content: '';
-          width: 0px;
-          transition: width 150ms ease-in;
+            content: "tabs";
+            position: absolute;
+            top: 0;
+            left: 0.4rem;
+            transform: translateY(-50%);
+            font-weight: 800;
+
+            padding: 0 4px;
+
+            background-image: linear-gradient(
+                180deg,
+                transparent 2px,
+                var(--sidebar) 10px
+            );
+            width: fit-content;
+            height: fit-content;
+            width: auto;
+
+            z-index: 99 !important;
         }
 
-        &[ selected="true" ] {
-          text-shadow: 0 0 3px #ddd9, 0 0 3px #ddd9, 0 0 3px #ddd9;
+        #zen-workspaces-button {
+            margin: 0 !important;
         }
 
-        &[ multiselected="true" ] {
-          &::before {
-            width: 4px;
-            color: green;
+        #tabbrowser-arrowscrollbox {
+            overflow: scroll;
+            height: 100%;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            tab {
+                background: none !important;
+                text-transform: lowercase !important;
 
-            height: 80%;
-            aspect-ratio: 1;
+                .tab-icon-image {
+                    --size: 14px;
+                    width: var(--size) !important;
+                    height: var(--size) !important;
+                }
 
-            background: var( --accent );
-            opacity: .6;
-            border-radius: 5px;
-          }
+                &::before {
+                    content: "";
+                    width: 0px;
+                    transition: width 150ms ease-in;
+                }
 
-          text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff !important;
+                &[selected="true"] {
+                    text-shadow:
+                        0 0 3px #ddd9,
+                        0 0 3px #ddd9,
+                        0 0 3px #ddd9;
+                }
+
+                &[multiselected="true"] {
+                    &::before {
+                        width: 4px;
+                        color: green;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        height: 80%;
+                        aspect-ratio: 1;
+
+                        background: var(--accent);
+                        opacity: 0.6;
+                        border-radius: 5px;
+                    }
+
+                    text-shadow:
+                        0 0 0 #fff,
+                        0 0 0 #fff,
+                        0 0 0 #fff !important;
+                }
+            }
         }
-      }
-    }
-  }
-
-  toolbarbutton {
-    display: flex !important;
-
-    min-height: 42px;
-
-    box-sizing: border-box;
-
-    & * {
-      font-size: 16px !important;
-      font-weight: 200 !important;
     }
 
-    width: 100% !important;
+    toolbarbutton {
+        display: flex !important;
 
-    border-radius: 1px !important;
-    border: 1px solid var(--border-el) !important;
+        min-height: 42px;
 
-    background: linear-gradient( 180deg, var(--bg-el-t), var(--bg-el-b) ) !important;
+        box-sizing: border-box;
 
-    color: var( --inactive-text );
+        & * {
+            font-size: 16px !important;
+            font-weight: 200 !important;
+        }
 
-    transition: 200ms ease-in;
-  }
+        width: 100% !important;
 
-  toolbarbutton:hover {
-    color: var( --active-text ) !important;
-  border-color: var( --border ) !important;
-  cursor: pointer !important;
-  }
+        border-radius: 1px !important;
+        border: 1px solid var(--border-el) !important;
 
-  #new-tab-button {
-    display: none !important;
-  }
+        background: linear-gradient(
+            180deg,
+            var(--bg-el-t),
+            var(--bg-el-b)
+        ) !important;
 
-  #alltabs-button {
-/*     display: none !important; */
-  }
+        color: var(--inactive-text);
 
-  & > toolbarbutton {
-    width: calc( 100% ) !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-
-    & * {
-      background: none !important;
+        transition: 200ms ease-in;
     }
-  }
 
-  #zen-sidebar-icons-wrapper {
-    padding: 0 !important;
-    margin: 0 !important;
+    toolbarbutton:hover {
+        color: var(--active-text) !important;
+        border-color: var(--border) !important;
+        cursor: pointer !important;
+    }
 
-    display: flex !important;
-    flex-direction: row !important;
-    gap: .6rem !important;
-    flex-wrap: wrap;
+    #new-tab-button {
+        display: none !important;
+    }
 
-    &::before {
-      display: none !important;
+    #alltabs-button {
+        /*     display: none !important; */
     }
 
     & > toolbarbutton {
-      width: fit-content !important;
-      flex: 1 !important;
+        width: calc(100%) !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        & * {
+            background: none !important;
+        }
     }
 
-  }
+    #zen-sidebar-icons-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0.6rem !important;
+        flex-wrap: wrap;
+
+        &::before {
+            display: none !important;
+        }
+
+        & > toolbarbutton {
+            width: fit-content !important;
+            flex: 1 !important;
+        }
+    }
 }
 
 #appcontent {
-  position: relative !important;
-  overflow: visible !important;
-
-  #zen-appcontent-navbar-container {
-    position: absolute !important;
-    width: 100% !important;
-    z-index: 10;
-    padding-top: .4rem !important;
-
-    #urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]) {
-      position: absolute !important;
-      min-width: 600px !important;
-
-      z-index: 99;
-    }
-
-    #urlbar-container {
-      transition: min-width 200ms ease-in !important;
-      --urlbar-container-height: 30px !important;
-
-
-      #urlbar {
-        height: inherit !important;
-        border-radius: 2px !important;
-        border: 1px solid var( --border-el ) !important;
-
-        background: linear-gradient( 180deg, var(--bg-el-t), var(--bg-el-b) ) !important;
-
-        transition: border-color 200ms ease-in !important;
-
-        --urlbar-height: 50px !important;
-
-        font-size: 16px !important;
-
-        overflow: visible !important;
-
-        .urlbar-input-container {
-          overflow: visible !important;
-          transition: padding-left 200ms ease-in-out;
-        }
-
-        & #identity-box {
-          position: absolute !important;
-          z-index: 9;
-          left: 4px !important;
-          top: 1px !important;
-          height: 80% !important;
-          opacity: 1;
-
-          transition: opacity 200ms ease-in-out;
-
-          #identity-icon-box {
-            margin: 0 !important;
-            padding: .3rem !important;
-          }
-
-          #identity-icon-label {
-            display: none;
-          }
-
-          * {
-            border-radius: 3px !important;
-          }
-        }
-
-        /*      urlbar changes color based on    */
-        #urlbar-background { transition: background 200ms ease-in-out; }
-        &:has( #identity-box:not( .verifiedDomain, .localResource ) ) {
-          .urlbar-input-container { padding-left: 2.4rem !important; }
-        }
-
-        &:has( .verifiedDomain, .localResource ) {
-          #identity-box { opacity: 0 !important; max-width: 0px !important; overflow: hidden !important; }
-          #urlbar-background { background: #081a08 !important; }
-        }
-
-
-        &:has( .notSecure ) {
-          #urlbar-background { background: #1a080a !important; }
-        }
-
-
-        .urlbar-input-container {
-          margin-top: 2px !important;
-          padding-left: .6rem !important;
-
-          #urlbar-input {
-            letter-spacing: .05rem !important;
-          }
-        }
-      }
-
-      * {
-        text-shadow: black 2px 2px !important;
-      }
-    }
-  }
-
-
-  #tabbrowser-tabbox {
+    position: relative !important;
     overflow: visible !important;
 
-    &::before {
-      content: 'browse';
-      position: absolute;
-      top: 0;
-      left: .6rem;
-      transform: translateY( -50% );
-      font-weight: 800;
+    #zen-appcontent-navbar-container {
+        position: absolute !important;
+        width: 100% !important;
+        z-index: 10;
+        padding-top: 0.4rem !important;
 
-      padding: 0 6px;
+        #urlbar:is(
+                [breakout][breakout-extend],
+                [breakout][usertyping][focused]
+            ) {
+            position: absolute !important;
+            min-width: 600px !important;
 
-      background-image: linear-gradient(180deg, transparent 6px, var( --bg ) 4px,  var( --bg ) 11px, transparent 10px );
-      height: fit-content;
-      width: auto;
+            z-index: 99;
+        }
 
-      z-index: 99 !important;
+        #urlbar-container {
+            transition: min-width 200ms ease-in !important;
+            --urlbar-container-height: 30px !important;
 
-      text-shadow:
-        -2px 1px 1px var( --bg ),
-        -2px 2px 1px var( --bg ),
+            #urlbar {
+                height: inherit !important;
+                border-radius: 2px !important;
+                border: 1px solid var(--border-el) !important;
 
-        -1px 1px 1px var( --bg ),
-        -1px 2px 1px var( --bg ),
+                background: linear-gradient(
+                    180deg,
+                    var(--bg-el-t),
+                    var(--bg-el-b)
+                ) !important;
 
-        0px 1px 1px var( --bg ),
-        0px 2px 1px var( --bg ),
+                transition: border-color 200ms ease-in !important;
 
-        1px 1px 1px var( --bg ),
-        1px 2px 1px var( --bg ),
+                --urlbar-height: 50px !important;
 
-        2px 1px 1px var( --bg ),
-        2px 2px 1px var( --bg );
+                font-size: 16px !important;
+
+                overflow: visible !important;
+
+                .urlbar-input-container {
+                    overflow: visible !important;
+                    transition: padding-left 200ms ease-in-out;
+                }
+
+                & #identity-box {
+                    position: absolute !important;
+                    z-index: 9;
+                    left: 4px !important;
+                    top: 1px !important;
+                    height: 80% !important;
+                    opacity: 1;
+
+                    transition: opacity 200ms ease-in-out;
+
+                    #identity-icon-box {
+                        margin: 0 !important;
+                        padding: 0.3rem !important;
+                    }
+
+                    #identity-icon-label {
+                        display: none;
+                    }
+
+                    * {
+                        border-radius: 3px !important;
+                    }
+                }
+
+                /*      urlbar changes color based on    */
+                #urlbar-background {
+                    transition: background 200ms ease-in-out;
+                }
+                &:has(#identity-box:not(.verifiedDomain, .localResource)) {
+                    .urlbar-input-container {
+                        padding-left: 2.4rem !important;
+                    }
+                }
+
+                &:has(.verifiedDomain, .localResource) {
+                    #identity-box {
+                        opacity: 0 !important;
+                        max-width: 0px !important;
+                        overflow: hidden !important;
+                    }
+                    #urlbar-background {
+                        background: #081a08 !important;
+                    }
+                }
+
+                &:has(.notSecure) {
+                    #urlbar-background {
+                        background: #1a080a !important;
+                    }
+                }
+
+                .urlbar-input-container {
+                    margin-top: 2px !important;
+                    padding-left: 0.6rem !important;
+
+                    #urlbar-input {
+                        letter-spacing: 0.05rem !important;
+                    }
+                }
+            }
+
+            * {
+                text-shadow: black 2px 2px !important;
+            }
+        }
     }
 
-    :root[inFullscreen] & {
-      width: 100% !important;
-      height: 100% !important;
-      &::before {
-        content: '';
-      }
+    #tabbrowser-tabbox {
+        overflow: visible !important;
+
+        &::before {
+            content: "browse";
+            position: absolute;
+            top: 0;
+            left: 0.6rem;
+            transform: translateY(-50%);
+            font-weight: 800;
+
+            padding: 0 6px;
+
+            background-image: linear-gradient(
+                180deg,
+                transparent 6px,
+                var(--bg) 4px,
+                var(--bg) 11px,
+                transparent 10px
+            );
+            height: fit-content;
+            width: auto;
+
+            z-index: 99 !important;
+
+            text-shadow:
+                -2px 1px 1px var(--bg),
+                -2px 2px 1px var(--bg),
+                -1px 1px 1px var(--bg),
+                -1px 2px 1px var(--bg),
+                0px 1px 1px var(--bg),
+                0px 2px 1px var(--bg),
+                1px 1px 1px var(--bg),
+                1px 2px 1px var(--bg),
+                2px 1px 1px var(--bg),
+                2px 2px 1px var(--bg);
+        }
+
+        :root[inFullscreen] & {
+            width: 100% !important;
+            height: 100% !important;
+            &::before {
+                content: "";
+            }
+        }
     }
+    #tabbrowser-tabpanels {
+        * {
+            box-shadow: 0 0 0 0 #fff5 !important;
+        }
 
-  }
-  #tabbrowser-tabpanels {
-    * {
-      box-shadow: 0 0 0 0 #fff5 !important;
+        * {
+            border: none !important;
+            outline: none !important;
+        }
+
+        > hbox {
+            border-radius: 3px !important;
+            border: 1px solid var(--border-el) !important;
+
+            * {
+                border: none !important;
+                outline: none !important;
+            }
+        }
     }
-
-
-    * {
-      border: none !important;
-      outline: none !important;
-    }
-
-    > hbox {
-      border-radius: 3px !important;
-      border: 1px solid var( --border-el ) !important;
-
-      * {
-        border: none !important;
-        outline: none !important;
-      }
-    }
-  }
 }
 
-body:has( #customization-container:not( [hidden="true"] ) ) {
-  #zen-appcontent-navbar-container {
-    min-width: 400px !important;
-    max-width: 400px !important;
+body:has(#customization-container:not([hidden="true"])) {
+    #zen-appcontent-navbar-container {
+        min-width: 400px !important;
+        max-width: 400px !important;
 
-    &::before {
-        content: 'editing controls' !important;
-      }
-  }
+        &::before {
+            content: "editing controls" !important;
+        }
+    }
 
-  #zen-tabbox-wrapper {
-    display: none !important;
-  }
+    #zen-tabbox-wrapper {
+        display: none !important;
+    }
 }
 
-@media not ( -moz-bool-pref: "zen.view.sidebar-expanded" ) {
-  :root {
-    --pad-header: 0px;
-  }
-  #zen-main-app-wrapper::before {
-    display: none !important;
-  }
-
-  #zen-appcontent-navbar-container {
-    display: none;
-  }
-
-  #browser {
-    max-width: 80px !important;
-
-    #navigator-toolbox {
-      max-width: 80px !important;
-      width: 80px !important;
-      min-width: 80px !important;
-
-      resize: none !important;
+/* minimal mode */
+@media not (-moz-bool-pref: "zen.view.sidebar-expanded") {
+    :root {
+        --pad-header: 0px;
     }
-  }
-
-  #navigator-toolbox {
-    padding: 0 !important;
-  }
-
-  #TabsToolbar, #zen-tabbox-wrapper {
-    padding-top: 10px !important;
-
-    #tabbrowser-tabbox::before {
-      top: 10px;
+    #zen-main-app-wrapper::before {
+        display: none !important;
     }
-  }
 
-  #TabsToolbar-customization-target {
-    &::before {
-      content: 'debug' !important;
+    #zen-appcontent-navbar-container {
+        display: none;
     }
-  }
+
+    #browser {
+        max-width: 10px !important;
+
+        #navigator-toolbox {
+            max-width: 10px !important;
+            width: 10px !important;
+            min-width: 10px !important;
+
+            padding: 0 !important;
+
+            resize: none !important;
+
+            #titlebar {
+                position: absolute !important;
+
+                left: -100px !important;
+                transform: translateX(-10px);
+
+                z-index: 101;
+
+                transition: left 200ms ease-in 500ms !important;
+
+                #TabsToolbar {
+                    border: 1px solid var(--border-el) !important;
+                    background: var(--sidebar) !important;
+
+                    margin: auto 0 !important;
+                    padding: 0.8rem 0.8rem !important;
+
+                    max-height: 90vh !important;
+                    min-height: 90vh !important;
+
+                    #TabsToolbar-customization-target {
+                        border: none !important;
+                        background: transparent !important;
+
+                        padding: 0 !important;
+                    }
+                }
+            }
+
+            &:hover,
+            & *:hover {
+                #titlebar {
+                    left: 15px !important;
+                    transition: left 200ms ease-in 0ms !important;
+                }
+            }
+
+            tab {
+                --separation-anim-time: 200ms;
+                --separation-dist: 4px;
+
+                transition: background 200ms ease-in-out !important;
+
+                & > :first-child:hover {
+                    background: #ddd1 !important;
+                    border-radius: 3px;
+                }
+
+                .tab-label-container {
+                    position: absolute !important;
+                    left: calc(50% - 5px);
+                    top: -50%;
+
+                    display: flex !important;
+
+                    & > label {
+                        background: #4a4a4a90;
+                        padding: 0.2rem !important;
+                        line-height: 7px !important;
+                        clip-path: xywh(2px 0 16px 100% round 3px);
+                    }
+                }
+
+                .tab-icon-image {
+                    position: relative !important;
+
+                    left: 0px;
+                    top: 0;
+
+                    filter: drop-shadow(0px 0px 0px #fff0);
+
+                    transition:
+                        left var(--separation-anim-time) ease-in,
+                        top var(--separation-anim-time) ease-in,
+                        filter var(--separation-anim-time) ease-in !important;
+                }
+
+                &[selected] .tab-icon-image {
+                    left: calc(var(--separation-dist) / -2);
+                    top: calc(var(--separation-dist) / -2);
+                    filter: drop-shadow(
+                        var(--separation-dist) var(--separation-dist) 0px #fff4
+                    );
+                }
+            }
+        }
+
+        #zen-tabbox-wrapper {
+            left: 5px !important;
+            min-width: calc(100vw - 2px) !important;
+        }
+    }
+
+    #TabsToolbar,
+    #zen-tabbox-wrapper {
+        /*  top padding    */
+        padding-top: 10px !important;
+
+        /*   "browse" text offset   */
+        #tabbrowser-tabbox::before {
+            top: 10px;
+        }
+    }
+
+    /*remove "tabs" text */
+    #TabsToolbar-customization-target::before {
+        content: "" !important;
+    }
+}
+
+/* popups */
+menupopup {
+    * {
+        font-family: "ProggyCleanTT" !important;
+        font-size: 16px !important;
+    }
+    arrowscrollbox {
+        border-radius: 3px !important;
+    }
+
+    & > menuitem {
+        &::before {
+            display: none !important;
+        }
+    }
 }
