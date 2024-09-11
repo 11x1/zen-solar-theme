@@ -63,8 +63,6 @@
             position: absolute !important;
             z-index: 2 !important;
 
-            z-index: 9 !important;
-
             left: calc(var(--sidebar-width) + 1.4rem);
             top: 6px;
 
@@ -80,6 +78,16 @@
             padding: 0 var(--side-pad) !important;
             padding-top: 6px !important;
             z-index: 1;
+
+            /* move it to topmost (relative to webview), so we can see what we are searching for */
+            &:has(
+                    #urlbar:is(
+                            [breakout][breakout-extend],
+                            [breakout][usertyping][focused]
+                        )
+                ) {
+                z-index: 3 !important;
+            }
 
             &::before {
                 content: "controls";
@@ -611,7 +619,6 @@ body:has(#customization-container:not([hidden="true"])) {
 
 /* Holy, this is ghetto */
 /* Ok so what this does is make the navbar smaller so we arent able to drag it withing the webview window */
-/* todo: fix :) */
 /* body:not(:has(#customization-container:not([hidden="true"]))) #appcontent:has( #zen-tabbox-wrapper:hover ) #zen-appcontent-navbar-container */
 @keyframes slidein {
     from {
