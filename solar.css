@@ -15,13 +15,11 @@
     --active-text: #fff;
     --inactive-text: #ffffff60;
 
-    --pad-header: 40px;
+    --pad-header: 30px;
+    --sidebar-width: 310px;
+    --name: "franz";
 
     --zen-panel-radius: 3px !important;
-}
-
-#zen-tabbox-wrapper {
-    --zen-border-radius: 0px !important;
 }
 
 #browser {
@@ -39,7 +37,9 @@
         height: 100% !important;
         flex: 1 !important;
 
-        resize: horizontal !important;
+        width: var(--sidebar-width);
+
+        resize: none !important;
         overflow: hidden !important;
 
         min-width: 246px !important;
@@ -61,38 +61,46 @@
 
         #zen-tabbox-wrapper {
             position: absolute !important;
+            z-index: 2 !important;
 
             z-index: 9 !important;
 
-            left: calc(100% + 0.6rem);
+            left: calc(var(--sidebar-width) + 1.4rem);
+            top: 6px;
 
-            width: calc(100vw - 100% - 0.6rem) !important;
+            width: calc(100vw - var(--sidebar-width) - 1.4rem) !important;
             height: calc(100vh - var(--pad-header)) !important;
         }
 
         #zen-appcontent-navbar-container {
-            border: 1px solid var(--border-el) !important;
             position: relative !important;
-            background: var(--sidebar) !important;
 
-            width: 1fr !important;
-            max-width: 1fr !important;
+            width: 100vw !important;
+            --side-pad: 0.1rem;
+            padding: 0 var(--side-pad) !important;
+            padding-top: 6px !important;
+            z-index: 1;
 
             &::before {
                 content: "controls";
                 position: absolute;
-                top: 0;
+                top: 0.3rem;
                 left: 0.4rem;
                 transform: translateY(-50%);
                 font-weight: 800;
 
-                padding: 0 4px;
+                padding: 0 6px;
 
                 background-image: linear-gradient(
                     180deg,
                     transparent 2px,
-                    var(--sidebar) 10px
+                    transparent 10px,
+                    var(--sidebar) 10px,
+
+                    var(--sidebar) 12px,
+                    transparent 10px
                 );
+
                 width: fit-content;
                 height: fit-content;
                 width: auto;
@@ -102,20 +110,27 @@
 
             #nav-bar {
                 display: flex !important;
-                flex-direction: column-reverse;
+                /*                This kills all exceeding items  */
+                /*                 flex-direction: column-reverse; */
                 flex-wrap: wrap !important;
 
                 width: 100%;
-                /*         min-width: 600px !important;; */
+                min-width: var(--sidebar-width) !important;
 
                 & #nav-bar-customization-target {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: repeat(auto-fit, 1fr);
+                    border: 1px solid var(--border-el) !important;
+                    position: relative !important;
+                    background: var(--sidebar) !important;
 
-                    max-width: 100%;
+                    max-width: var(--sidebar-width);
+                    min-width: var(--sidebar-width);
+
+                    flex-wrap: wrap;
                     padding: 0 0.6rem !important;
                     padding-top: 0.4rem !important;
+
+                    align-items: center;
+                    justify-content: space-evenly;
 
                     > * {
                         order: 2 !important;
@@ -123,11 +138,10 @@
 
                     & #urlbar-container,
                     & #wrapper-urlbar-container {
-                        grid-row-start: 1;
-                        grid-column-start: 1;
-                        grid-column-end: 6;
+                        order: 1 !important;
 
-                        width: 100% !important;
+                        width: inherit !important;
+                        min-width: 100%;
                         flex: 1 !important;
                         margin: 0 !important;
 
@@ -174,7 +188,7 @@
     padding-top: var(--pad-header);
     &::before {
         position: absolute;
-        content: "Welcome to Zen, franz.";
+        content: "Welcome to Zen, " var(--name) ".";
         padding: 0.4rem;
         padding-left: 1rem;
         top: 0 !important;
@@ -235,6 +249,9 @@
         position: relative !important;
 
         background: var(--sidebar) !important;
+
+        max-width: var(--sidebar-width);
+        min-width: var(--sidebar-width);
 
         &::before {
             content: "tabs";
@@ -397,16 +414,6 @@
         z-index: 10;
         padding-top: 0.4rem !important;
 
-        #urlbar:is(
-                [breakout][breakout-extend],
-                [breakout][usertyping][focused]
-            ) {
-            position: absolute !important;
-            min-width: 600px !important;
-
-            z-index: 99;
-        }
-
         #urlbar-container {
             transition: min-width 200ms ease-in !important;
             --urlbar-container-height: 30px !important;
@@ -429,6 +436,11 @@
                 font-size: 16px !important;
 
                 overflow: visible !important;
+
+                /*      urlbar changes color based on    */
+                #urlbar-background {
+                    transition: background 200ms ease-in-out;
+                }
 
                 .urlbar-input-container {
                     overflow: visible !important;
@@ -459,10 +471,21 @@
                     }
                 }
 
-                /*      urlbar changes color based on    */
-                #urlbar-background {
-                    transition: background 200ms ease-in-out;
+                &:is(
+                        [breakout][breakout-extend],
+                        [breakout][usertyping][focused]
+                    ) {
+                    position: absolute !important;
+                    min-width: 600px !important;
+
+                    z-index: 99;
+
+                    #urlbar-background {
+                        transition: none !important;
+                        background: #1d1d1d !important;
+                    }
                 }
+
                 &:has(#identity-box:not(.verifiedDomain, .localResource)) {
                     .urlbar-input-container {
                         padding-left: 2.4rem !important;
@@ -519,7 +542,7 @@
                 180deg,
                 transparent 6px,
                 var(--bg) 4px,
-                var(--bg) 11px,
+                var(--bg) 10px,
                 transparent 10px
             );
             height: fit-content;
@@ -559,7 +582,8 @@
         }
 
         > hbox {
-            border-radius: 3px !important;
+            /* webview round */
+            border-radius: 1px !important;
             border: 1px solid var(--border-el) !important;
 
             * {
@@ -583,6 +607,47 @@ body:has(#customization-container:not([hidden="true"])) {
     #zen-tabbox-wrapper {
         display: none !important;
     }
+}
+
+/* Holy, this is ghetto */
+/* Ok so what this does is make the navbar smaller so we arent able to drag it withing the webview window */
+/* todo: fix :) */
+/* body:not(:has(#customization-container:not([hidden="true"]))) #appcontent:has( #zen-tabbox-wrapper:hover ) #zen-appcontent-navbar-container */
+@keyframes slidein {
+    from {
+        transform: scaleX(10000);
+    }
+
+    99% {
+        transform: scaleX(10000);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* debug navbar states (mainly for toolbarbutton debug) */
+/* #nav-bar, #zen-appcontent-navbar-container {
+    border: 1px dashed green !important;
+}
+
+#nav-bar {
+    border-color: red !important;
+} */
+
+/*  update width when in webview to not allow dragging when in webview */
+body:has(#zen-tabbox-wrapper:hover)
+    :is(#nav-bar, #zen-appcontent-navbar-container) {
+    max-width: var(--sidebar-width) !important;
+}
+
+/* update width on customization end */
+:is(body:has(#customization-container[hidden="true"]))
+    :is(#zen-appcontent-navbar-container, #nav-bar) {
+    animation-name: slidein;
+    animation-duration: 1s !important;
+    animation-iteration-count: once;
 }
 
 /* minimal mode */
@@ -647,11 +712,29 @@ body:has(#customization-container:not([hidden="true"])) {
                 }
             }
 
+            .toolbarbutton-icon {
+                background: none !important;
+            }
+
+            #tabbrowser-arrowscrollbox {
+                /*                 max-width: max-content !important; */
+            }
+
+            #TabsToolbar-customization-target {
+                max-width: fit-content;
+                min-width: fit-content;
+
+                > toolbarbutton > * {
+                    background: none !important;
+                }
+            }
+
             tab {
                 --separation-anim-time: 200ms;
                 --separation-dist: 4px;
 
                 transition: background 200ms ease-in-out !important;
+                margin: 0 !important;
 
                 & > :first-child:hover {
                     background: #ddd1 !important;
@@ -720,11 +803,29 @@ body:has(#customization-container:not([hidden="true"])) {
     }
 }
 
+@keyframes menupopup-slide {
+    from {
+        max-height: 0 !important;
+        min-height: 0 !important;
+    }
+    to {
+        max-height: 100% !important;
+        min-height: 100% !important;
+    }
+}
+
+:host(.in-menulist) arrowscrollbox {
+    max-width: 0 !important;
+    min-width: 0 !important;
+}
 /* popups */
-menupopup {
+menupopup,
+panel {
+    animation: menupopup-slide 1s ease-in forwards;
     * {
         font-family: "ProggyCleanTT" !important;
         font-size: 16px !important;
+        animation: menupopup-slide 1s ease-in forwards;
     }
     arrowscrollbox {
         border-radius: 3px !important;

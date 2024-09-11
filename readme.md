@@ -20,7 +20,7 @@ After everything your `chrome` folder should look something like this
 
 ## Todo
 - [ ] scroll overflow sidebar
-- [ ] hideable sidebar
+- [x] hideable sidebar
 - [ ] minimal sidebar support
 - [ ] reactive urlbox (really small and hard to use atm)
 - [ ] fullscreen support including sleek ui tweaks
