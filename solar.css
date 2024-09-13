@@ -1,6 +1,10 @@
+@font-face {
+    src: url(ProggyClean.ttf);
+    font-family: ProggyCleanTT;
+}
+
 :root {
-    src: url("ProggyClean.ttf");
-    font-family: "ProggyCleanTT", "Verdana" !important;
+    font-family: ProggyCleanTT, "Verdana" !important;
     font-size: 16px !important;
     --accent: #a590d7;
     --sidebar: #111111;
@@ -228,6 +232,9 @@
         #zen-tabbox-wrapper {
             margin-left: -25px !important;
             min-width: calc(100vw - 5px) !important;
+
+            left: 1.4rem !important;
+            top: 0 !important;
 
             min-height: calc(100vh - 5px) !important;
         }
