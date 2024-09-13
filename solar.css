@@ -224,6 +224,10 @@
         }
     }
 
+    #zen-appcontent-navbar-container::before {
+        content: "" !important;
+    }
+
     #browser {
         width: 0 !important;
         max-width: 0 !important;
