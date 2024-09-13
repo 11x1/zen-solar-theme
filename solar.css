@@ -10,6 +10,10 @@
     --sidebar: #111111;
 
     --bg: #151515;
+    --bg-20: #15151533;
+    --bg-40: #15151566;
+    --bg-60: #15151599;
+    --bg-80: #151515cc;
 
     --border: #43475c;
     --border-el: #232323;
@@ -85,6 +89,12 @@
             padding-top: 6px !important;
             z-index: 1;
 
+            /* uhh this works as intended at the moment? If we have notis just move appcontent to be above browser */
+            /* I 100% thought this would not allow us to click int he webview anymore but I guess im wrong? */
+            &:has(#tab-notification-deck) {
+                z-index: 3 !important;
+            }
+
             /* move it to topmost (relative to webview), so we can see what we are searching for */
             &:has(
                     #urlbar:is(
@@ -122,14 +132,54 @@
                 z-index: 99 !important;
             }
 
+            /* bookmarks */
+            & #PersonalToolbar {
+                position: absolute !important;
+                top: calc(-1 * var(--pad-header)) !important;
+
+                left: var(--sidebar-width) !important;
+                min-width: calc(
+                    100vw - var(--sidebar-width) - 16rem
+                ) !important;
+                max-width: calc(
+                    100vw - var(--sidebar-width) - 16rem
+                ) !important;
+            }
+
             /* would be useful to see toast notis */
             /* todo: fix this z fighting with browser, possibly need to redo how toolbar items are calculated again :sob: */
             #tab-notification-deck {
+                &:not(:has(notification-message)) {
+                    display: none !important;
+                }
+
                 position: fixed !important;
                 z-index: 4200 !important;
+                left: calc(var(--sidebar-width) + 1.5rem) !important;
+                top: calc(var(--pad-header) + 0.1rem) !important;
 
-                right: 0rem !important;
-                top: 0rem !important;
+                padding: 0.5rem;
+                margin: 1rem 0.5rem;
+
+                background: var(--bg-60) !important;
+                backdrop-filter: blur(10px);
+
+                border-radius: var(--zen-panel-radius);
+
+                & > vbox {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 0.3rem !important;
+                }
+
+                & notification-message {
+                    background: linear-gradient(
+                        90deg,
+                        var(--bg-el-t),
+                        var(--bg-el-b)
+                    );
+                    border-radius: var(--zen-panel-radius) !important;
+                }
             }
 
             #nav-bar {
@@ -899,6 +949,12 @@ border-color: red !important;
 menupopup,
 panel {
     animation: menupopup-slide 1s ease-in forwards;
+    --panel-background: linear-gradient(
+        90deg,
+        var(--bg-el-t),
+        var(--bg-el-b)
+    ) !important;
+
     * {
         font-family: "ProggyCleanTT" !important;
         font-size: 16px !important;
@@ -908,9 +964,17 @@ panel {
         border-radius: 3px !important;
     }
 
-    & > menuitem {
-        &::before {
-            display: none !important;
+    & > * {
+        transition: padding-left 200ms ease-in-out;
+
+        & > menupopup {
+            & > *:not(menuseparator):hover {
+                padding-left: 1.2rem !important;
+            }
+        }
+
+        &:not(menuseparator):hover {
+            padding-left: 2.6rem !important;
         }
     }
 }
