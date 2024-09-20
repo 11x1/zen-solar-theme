@@ -1,678 +1,670 @@
 @font-face {
-    src: url(ProggyClean.ttf);
-    font-family: ProggyCleanTT;
+  src: url(ProggyClean.ttf);
+  font-family: ProggyCleanTT;
 }
 
 :root {
-    font-family: ProggyCleanTT, "Verdana" !important;
-    font-size: 16px !important;
-    --accent: #a590d7;
-    --sidebar: #111111;
+  font-family: ProggyCleanTT, "Verdana" !important;
+  font-size: 16px !important;
+  --accent: #a590d7;
+  --sidebar: #111111;
 
-    --bg: #151515;
-    --bg-20: #15151533;
-    --bg-40: #15151566;
-    --bg-60: #15151599;
-    --bg-80: #151515cc;
+  --bg: #151515;
+  --bg-20: #15151533;
+  --bg-40: #15151566;
+  --bg-60: #15151599;
+  --bg-80: #151515cc;
 
-    --border: #43475c;
-    --border-el: #232323;
-    --bg-el-t: #202020;
-    --bg-el-b: #1e1e1e;
+  --border: #43475c;
+  --border-el: #232323;
+  --bg-el-t: #202020;
+  --bg-el-b: #1e1e1e;
 
-    --active-text: #fff;
-    --inactive-text: #ffffff60;
+  --active-text: #fff;
+  --inactive-text: #ffffff60;
 
-    --pad-header: 30px;
-    --sidebar-width: 310px;
-    --name: "franz";
+  --pad-header: 30px;
+  --sidebar-width: 310px;
+  --name: "franz";
 
-    --zen-panel-radius: 3px !important;
+  --zen-panel-radius: 3px !important;
 
-    --logo: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 80" height="NaN" width="20"><defs><style>.g{fill:%23000;}.g,.h,.i{stroke-width:0px;}.h{fill:url(%23e);}.i{fill:%23fff;}</style><linearGradient id="e" x1="40" y1="80" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset=".1" stop-color="%23fff" stop-opacity=".02"></stop><stop offset=".9" stop-color="%23fff" stop-opacity=".1"></stop></linearGradient></defs><g id="c"><rect class="g" width="80" height="80" rx="18.25" ry="18.25"></rect></g><g id="d"><rect class="h" width="80" height="80" rx="18.25" ry="18.25"></rect></g><g id="f"><path class="i" d="M63.4367,57.6782c-.0536,3.2127-2.7418,5.7593-5.955,5.7593h-24.1527c-.9392,0-1.5768-.9548-1.2169-1.8223l.0082-.0197c1.5882-3.8346,4.1653-7.0703,7.456-9.4308.4093-.2936.9032-.4459,1.407-.4459h16.5948c3.2694,0,5.9133,2.6775,5.8585,5.9594Z"></path><path class="i" d="M46.671,16.5625c.9392,0,1.5768.9548,1.2169,1.8223l-.0082.0197c-1.5882,3.8346-4.1653,7.0703-7.456,9.4308-.4093.2936-.9032.4459-1.407.4459h-16.4984c-3.2132,0-5.9014-2.5466-5.955-5.7593-.0547-3.2819,2.5892-5.9594,5.8585-5.9594h24.2491Z"></path><path class="i" d="M22.4208,63.4375c-.7473,0-1.5065-.1438-2.2398-.4475-2.9896-1.2383-4.4093-4.6657-3.171-7.6551,1.9045-4.5977,4.6342-8.7196,8.1136-12.251,3.6044-3.6585,7.8551-6.5172,12.6343-8.4968,6.5691-2.7211,11.6853-7.8373,14.4061-14.4061,1.2383-2.9897,4.6658-4.4091,7.6551-3.171,2.9896,1.2383,4.4093,4.6657,3.171,7.6551-1.9045,4.5977-4.6342,8.7196-8.1136,12.251-3.6044,3.6585-7.8551,6.5172-12.6343,8.4968-6.5691,2.7211-11.6853,7.8373-14.4061,14.4061-.9345,2.2562-3.1164,3.6185-5.4153,3.6185Z"></path></g></svg>');
+  --logo: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 80" height="NaN" width="20"><defs><style>.g{fill:%23000;}.g,.h,.i{stroke-width:0px;}.h{fill:url(%23e);}.i{fill:%23fff;}</style><linearGradient id="e" x1="40" y1="80" x2="40" y2="0" gradientUnits="userSpaceOnUse"><stop offset=".1" stop-color="%23fff" stop-opacity=".02"></stop><stop offset=".9" stop-color="%23fff" stop-opacity=".1"></stop></linearGradient></defs><g id="c"><rect class="g" width="80" height="80" rx="18.25" ry="18.25"></rect></g><g id="d"><rect class="h" width="80" height="80" rx="18.25" ry="18.25"></rect></g><g id="f"><path class="i" d="M63.4367,57.6782c-.0536,3.2127-2.7418,5.7593-5.955,5.7593h-24.1527c-.9392,0-1.5768-.9548-1.2169-1.8223l.0082-.0197c1.5882-3.8346,4.1653-7.0703,7.456-9.4308.4093-.2936.9032-.4459,1.407-.4459h16.5948c3.2694,0,5.9133,2.6775,5.8585,5.9594Z"></path><path class="i" d="M46.671,16.5625c.9392,0,1.5768.9548,1.2169,1.8223l-.0082.0197c-1.5882,3.8346-4.1653,7.0703-7.456,9.4308-.4093.2936-.9032.4459-1.407.4459h-16.4984c-3.2132,0-5.9014-2.5466-5.955-5.7593-.0547-3.2819,2.5892-5.9594,5.8585-5.9594h24.2491Z"></path><path class="i" d="M22.4208,63.4375c-.7473,0-1.5065-.1438-2.2398-.4475-2.9896-1.2383-4.4093-4.6657-3.171-7.6551,1.9045-4.5977,4.6342-8.7196,8.1136-12.251,3.6044-3.6585,7.8551-6.5172,12.6343-8.4968,6.5691-2.7211,11.6853-7.8373,14.4061-14.4061,1.2383-2.9897,4.6658-4.4091,7.6551-3.171,2.9896,1.2383,4.4093,4.6657,3.171,7.6551-1.9045,4.5977-4.6342,8.7196-8.1136,12.251-3.6044,3.6585-7.8551,6.5172-12.6343,8.4968-6.5691,2.7211-11.6853,7.8373-14.4061,14.4061-.9345,2.2562-3.1164,3.6185-5.4153,3.6185Z"></path></g></svg>');
 }
 
 #browser {
-    display: grid !important;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr;
+  display: grid !important;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
 
-    max-height: calc(100% - 11px) !important;
+  max-height: calc(100% - 11px) !important;
 
-    max-width: fit-content !important;
+  max-width: fit-content !important;
+  position: relative !important;
+
+  & #navigator-toolbox {
+    padding-top: 1rem;
+    height: 100% !important;
+    flex: 1 !important;
+
+    width: var(--sidebar-width);
+
+    resize: none !important;
+    overflow: hidden !important;
+
+    min-width: 246px !important;
+  }
+
+  & #appcontent {
+    grid-row-start: 1 !important;
+    height: min-content !important;
+    padding: 0 0.4rem !important;
+
+    width: 100% !important;
+
+    flex: 0 !important;
+
     position: relative !important;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, auto-fit);
 
-    & #navigator-toolbox {
-        padding-top: 1rem;
-        height: 100% !important;
-        flex: 1 !important;
+    #zen-tabbox-wrapper {
+      position: absolute !important;
+      z-index: 2 !important;
 
-        width: var(--sidebar-width);
+      left: calc(var(--sidebar-width) + 1.4rem);
+      top: 6px;
 
-        resize: none !important;
-        overflow: hidden !important;
-
-        min-width: 246px !important;
+      width: calc(100vw - var(--sidebar-width) - 1.4rem) !important;
+      height: calc(100vh - var(--pad-header)) !important;
     }
 
-    & #appcontent {
-        grid-row-start: 1 !important;
-        height: min-content !important;
-        padding: 0 0.4rem !important;
+    #zen-appcontent-navbar-container {
+      position: relative !important;
 
-        width: 100% !important;
+      width: 100vw !important;
+      --side-pad: 0.1rem;
+      padding: 0 var(--side-pad) !important;
+      padding-top: 6px !important;
+      z-index: 1;
 
-        flex: 0 !important;
+      /* uhh this works as intended at the moment? If we have notis just move appcontent to be above browser */
+      /* I 100% thought this would not allow us to click int he webview anymore but I guess im wrong? */
+      &:has( #tab-notification-deck ) {
+        z-index: 3 !important;
+      }
 
-        position: relative !important;
-        display: grid !important;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(10, auto-fit);
+      /* move it to topmost (relative to webview), so we can see what we are searching for */
+      &:has(
+      #urlbar:is(
+      [breakout][breakout-extend],
+      [breakout][usertyping][focused]
+      )
+      ) {
+        z-index: 3 !important;
+      }
 
-        #zen-tabbox-wrapper {
-            position: absolute !important;
-            z-index: 2 !important;
+      &::before {
+        content: "controls";
+        position: absolute;
+        top: 0.3rem;
+        left: 0.4rem;
+        transform: translateY(-50%);
+        font-weight: 800;
 
-            left: calc(var(--sidebar-width) + 1.4rem);
-            top: 6px;
+        padding: 0 6px;
 
-            width: calc(100vw - var(--sidebar-width) - 1.4rem) !important;
-            height: calc(100vh - var(--pad-header)) !important;
+        background-image: linear-gradient(
+          180deg,
+          transparent 2px,
+          transparent 10px,
+          var(--sidebar) 10px,
+
+          var(--sidebar) 12px,
+          transparent 10px
+        );
+
+        width: fit-content;
+        height: fit-content;
+        width: auto;
+
+        z-index: 99 !important;
+      }
+
+      /* bookmarks */
+      & #PersonalToolbar {
+        position: absolute !important;
+        top: calc( -1 * var( --pad-header ) ) !important;
+
+        left: calc( var( --sidebar-width ) + .6rem ) !important;
+        min-width: calc( 100vw - var( --sidebar-width ) - 16rem ) !important;
+        max-width: calc( 100vw - var( --sidebar-width ) - 16rem ) !important;
+      }
+
+      /* would be useful to see toast notis */
+      /* todo: fix this z fighting with browser, possibly need to redo how toolbar items are calculated again :sob: */
+      #tab-notification-deck {
+        &:not( :has( notification-message ) ) {
+          display: none !important;
         }
 
-        #zen-appcontent-navbar-container {
-            position: relative !important;
+        position: fixed !important;
+        z-index: 4200 !important;
+        left: calc( var( --sidebar-width ) + 1.5rem ) !important;
+        top: calc( var( --pad-header ) + .1rem ) !important;
 
-            width: 100vw !important;
-            --side-pad: 0.1rem;
-            padding: 0 var(--side-pad) !important;
-            padding-top: 6px !important;
-            z-index: 1;
+        padding: .5rem;
+        margin: 1rem .5rem;
 
-            /* uhh this works as intended at the moment? If we have notis just move appcontent to be above browser */
-            /* I 100% thought this would not allow us to click int he webview anymore but I guess im wrong? */
-            &:has(#tab-notification-deck) {
-                z-index: 3 !important;
-            }
+        background: var( --bg-60 ) !important;
+        backdrop-filter: blur( 10px );
 
-            /* move it to topmost (relative to webview), so we can see what we are searching for */
-            &:has(
-                    #urlbar:is(
-                            [breakout][breakout-extend],
-                            [breakout][usertyping][focused]
-                        )
-                ) {
-                z-index: 3 !important;
-            }
+        border-radius: var( --zen-panel-radius );
 
-            &::before {
-                content: "controls";
-                position: absolute;
-                top: 0.3rem;
-                left: 0.4rem;
-                transform: translateY(-50%);
-                font-weight: 800;
-
-                padding: 0 6px;
-
-                background-image: linear-gradient(
-                    180deg,
-                    transparent 2px,
-                    transparent 10px,
-                    var(--sidebar) 10px,
-
-                    var(--sidebar) 12px,
-                    transparent 10px
-                );
-
-                width: fit-content;
-                height: fit-content;
-                width: auto;
-
-                z-index: 99 !important;
-            }
-
-            /* bookmarks */
-            & #PersonalToolbar {
-                position: absolute !important;
-                top: calc(-1 * var(--pad-header)) !important;
-
-                left: var(--sidebar-width) !important;
-                min-width: calc(
-                    100vw - var(--sidebar-width) - 16rem
-                ) !important;
-                max-width: calc(
-                    100vw - var(--sidebar-width) - 16rem
-                ) !important;
-            }
-
-            /* would be useful to see toast notis */
-            /* todo: fix this z fighting with browser, possibly need to redo how toolbar items are calculated again :sob: */
-            #tab-notification-deck {
-                &:not(:has(notification-message)) {
-                    display: none !important;
-                }
-
-                position: fixed !important;
-                z-index: 4200 !important;
-                left: calc(var(--sidebar-width) + 1.5rem) !important;
-                top: calc(var(--pad-header) + 0.1rem) !important;
-
-                padding: 0.5rem;
-                margin: 1rem 0.5rem;
-
-                background: var(--bg-60) !important;
-                backdrop-filter: blur(10px);
-
-                border-radius: var(--zen-panel-radius);
-
-                & > vbox {
-                    display: flex !important;
-                    flex-direction: column !important;
-                    gap: 0.3rem !important;
-                }
-
-                & notification-message {
-                    background: linear-gradient(
-                        90deg,
-                        var(--bg-el-t),
-                        var(--bg-el-b)
-                    );
-                    border-radius: var(--zen-panel-radius) !important;
-                }
-            }
-
-            #nav-bar {
-                display: flex !important;
-                /*                This kills all exceeding items  */
-                /*                 flex-direction: column-reverse; */
-                flex-wrap: wrap !important;
-
-                width: 100%;
-                min-width: var(--sidebar-width) !important;
-
-                & #nav-bar-customization-target {
-                    border: 1px solid var(--border-el) !important;
-                    position: relative !important;
-                    background: var(--sidebar) !important;
-
-                    max-width: var(--sidebar-width);
-                    min-width: var(--sidebar-width);
-
-                    flex-wrap: wrap;
-                    padding: 0 0.6rem !important;
-                    padding-top: 0.4rem !important;
-
-                    align-items: center;
-                    justify-content: space-evenly;
-
-                    > * {
-                        order: 2 !important;
-                    }
-
-                    & #urlbar-container,
-                    & #wrapper-urlbar-container {
-                        order: 1 !important;
-
-                        width: inherit !important;
-                        min-width: 100%;
-                        flex: 1 !important;
-                        margin: 0 !important;
-
-                        #urlbar {
-                            padding: 0 !important;
-                        }
-                    }
-
-                    & .toolbarbutton-1 {
-                        width: min-content !important;
-                    }
-                }
-
-                & > * {
-                    order: 2 !important;
-                }
-
-                & #nav-bar-overflow-button {
-                    order: 1 !important;
-                }
-
-                & :is(.titlebar-buttonbox-container, #PanelUI-button) {
-                    position: fixed !important;
-                    right: 0.6rem !important;
-                    top: 0.2rem !important;
-                    padding: 0 !important;
-                }
-
-                & #PanelUI-button {
-                    right: 10rem !important;
-                    top: 0.1rem !important;
-                }
-            }
+        & > vbox {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: .3rem !important;
         }
+
+        & notification-message {
+          background: linear-gradient( 90deg, var( --bg-el-t ), var( --bg-el-b ) );
+          border-radius: var( --zen-panel-radius ) !important;
+        }
+      }
+
+      #nav-bar {
+        display: flex !important;
+        /*                This kills all exceeding items  */
+        /*                 flex-direction: column-reverse; */
+        flex-wrap: wrap !important;
+
+        width: 100%;
+        min-width: var(--sidebar-width) !important;
+
+        & #nav-bar-customization-target {
+          border: 1px solid var(--border-el) !important;
+          position: relative !important;
+          background: var(--sidebar) !important;
+
+          max-width: var(--sidebar-width);
+          min-width: var(--sidebar-width);
+
+          flex-wrap: wrap;
+          padding: 0 0.6rem !important;
+          padding-top: 0.4rem !important;
+
+          align-items: center;
+          justify-content: space-evenly;
+
+          > * {
+            order: 2 !important;
+          }
+
+          & #urlbar-container,
+          & #wrapper-urlbar-container {
+            order: 1 !important;
+
+            width: inherit !important;
+            min-width: 100%;
+            flex: 1 !important;
+            margin: 0 !important;
+
+            #urlbar {
+              padding: 0 !important;
+            }
+          }
+
+          & .toolbarbutton-1 {
+            width: min-content !important;
+          }
+        }
+
+        & > * {
+          order: 2 !important;
+        }
+
+        & #nav-bar-overflow-button {
+          order: 1 !important;
+        }
+
+        & :is(.titlebar-buttonbox-container, #PanelUI-button) {
+          position: fixed !important;
+          right: 0.6rem !important;
+          top: 0.2rem !important;
+          padding: 0 !important;
+        }
+
+        & #PanelUI-button {
+          right: 10rem !important;
+          top: 0.1rem !important;
+        }
+      }
     }
+  }
 }
 
 #zen-main-app-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    background: var(--bg) !important;
+  background: var(--bg) !important;
 
-    padding-top: var(--pad-header);
-    &::before {
-        position: absolute;
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-        content: var(--logo) "Welcome to Zen, " var(--name) ".";
-        padding: 0.4rem;
-        padding-left: 1rem;
-        top: 0 !important;
-        z-index: 9;
+  padding-top: var(--pad-header);
+  &::before {
+    position: absolute;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    content: var( --logo ) "Welcome to Zen, " var(--name) ".";
+    padding: 0.4rem;
+    padding-left: 1rem;
+    top: 0 !important;
+    z-index: 9;
 
-        background: linear-gradient(
-            90deg,
-            var(--inactive-text) 120px,
-            var(--active-text) 120px
-        );
-        background-clip: text;
-        color: transparent;
-    }
+    background: linear-gradient(
+      90deg,
+      var(--inactive-text) 120px,
+      var(--active-text) 120px
+    );
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 #TabsToolbar {
-    gap: 0.6rem;
-    padding: 0 0.4rem !important;
-    overflow: visible !important;
+  gap: 0.6rem;
+  padding: 0 0.4rem !important;
+  overflow: visible !important;
 
-    #newtab-button-container {
-        display: none !important;
+  #newtab-button-container {
+    display: none !important;
+  }
+
+  #TabsToolbar-customization-target {
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center;
+    padding: 0.6rem !important;
+    gap: 0rem;
+
+    border: 1px solid var(--border-el) !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+
+    position: relative !important;
+
+    background: var(--sidebar) !important;
+
+    max-width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+
+    &::before {
+      content: "tabs";
+      position: absolute;
+      top: 0;
+      left: 0.4rem;
+      transform: translateY(-50%);
+      font-weight: 800;
+
+      padding: 0 4px;
+
+      background-image: linear-gradient(
+        180deg,
+        transparent 2px,
+        var(--sidebar) 10px
+      );
+      width: fit-content;
+      height: fit-content;
+      width: auto;
+
+      z-index: 99 !important;
     }
 
-    #TabsToolbar-customization-target {
-        display: flex !important;
-        flex-direction: column !important;
-        align-content: center;
-        padding: 0.6rem !important;
-        gap: 0rem;
+    #zen-workspaces-button {
+      margin: 0 !important;
+    }
 
-        border: 1px solid var(--border-el) !important;
-        margin: 0 !important;
-        padding: 1rem !important;
+    #tabbrowser-arrowscrollbox {
+      overflow: scroll;
+      height: 100%;
 
-        position: relative !important;
+      tab {
+        background: none !important;
+        text-transform: lowercase !important;
 
-        background: var(--sidebar) !important;
-
-        max-width: var(--sidebar-width);
-        min-width: var(--sidebar-width);
+        .tab-icon-image {
+          --size: 14px;
+          width: var(--size) !important;
+          height: var(--size) !important;
+        }
 
         &::before {
-            content: "tabs";
-            position: absolute;
-            top: 0;
-            left: 0.4rem;
-            transform: translateY(-50%);
-            font-weight: 800;
-
-            padding: 0 4px;
-
-            background-image: linear-gradient(
-                180deg,
-                transparent 2px,
-                var(--sidebar) 10px
-            );
-            width: fit-content;
-            height: fit-content;
-            width: auto;
-
-            z-index: 99 !important;
+          content: "";
+          width: 0px;
+          transition: width 150ms ease-in;
         }
 
-        #zen-workspaces-button {
-            margin: 0 !important;
+        &[selected="true"] {
+          text-shadow:
+            0 0 3px #ddd9,
+            0 0 3px #ddd9,
+            0 0 3px #ddd9;
         }
 
-        #tabbrowser-arrowscrollbox {
-            overflow: scroll;
-            height: 100%;
+        &[multiselected="true"] {
+          &::before {
+            width: 4px;
+            color: green;
 
-            tab {
-                background: none !important;
-                text-transform: lowercase !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-                .tab-icon-image {
-                    --size: 14px;
-                    width: var(--size) !important;
-                    height: var(--size) !important;
-                }
+            height: 80%;
+            aspect-ratio: 1;
 
-                &::before {
-                    content: "";
-                    width: 0px;
-                    transition: width 150ms ease-in;
-                }
+            background: var(--accent);
+            opacity: 0.6;
+            border-radius: 5px;
+          }
 
-                &[selected="true"] {
-                    text-shadow:
-                        0 0 3px #ddd9,
-                        0 0 3px #ddd9,
-                        0 0 3px #ddd9;
-                }
-
-                &[multiselected="true"] {
-                    &::before {
-                        width: 4px;
-                        color: green;
-
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        height: 80%;
-                        aspect-ratio: 1;
-
-                        background: var(--accent);
-                        opacity: 0.6;
-                        border-radius: 5px;
-                    }
-
-                    text-shadow:
-                        0 0 0 #fff,
-                        0 0 0 #fff,
-                        0 0 0 #fff !important;
-                }
-            }
+          text-shadow:
+            0 0 0 #fff,
+            0 0 0 #fff,
+            0 0 0 #fff !important;
         }
+      }
+    }
+  }
+
+  toolbarbutton {
+    display: flex !important;
+
+    min-height: 42px;
+
+    box-sizing: border-box;
+
+    & * {
+      font-size: 16px !important;
+      font-weight: 200 !important;
     }
 
-    toolbarbutton {
-        display: flex !important;
+    width: 100% !important;
 
-        min-height: 42px;
+    border-radius: 1px !important;
+    border: 1px solid var(--border-el) !important;
 
-        box-sizing: border-box;
+    background: linear-gradient(
+      180deg,
+      var(--bg-el-t),
+      var(--bg-el-b)
+    ) !important;
 
-        & * {
-            font-size: 16px !important;
-            font-weight: 200 !important;
-        }
+    color: var(--inactive-text);
 
-        width: 100% !important;
+    transition: 200ms ease-in;
+  }
 
-        border-radius: 1px !important;
-        border: 1px solid var(--border-el) !important;
+  toolbarbutton:hover {
+    color: var(--active-text) !important;
+    border-color: var(--border) !important;
+    cursor: pointer !important;
+  }
 
-        background: linear-gradient(
-            180deg,
-            var(--bg-el-t),
-            var(--bg-el-b)
-        ) !important;
+  #new-tab-button {
+    display: none !important;
+  }
 
-        color: var(--inactive-text);
+  #alltabs-button {
+    /*     display: none !important; */
+  }
 
-        transition: 200ms ease-in;
+  & > toolbarbutton {
+    width: calc(100%) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    & * {
+      background: none !important;
     }
+  }
 
-    toolbarbutton:hover {
-        color: var(--active-text) !important;
-        border-color: var(--border) !important;
-        cursor: pointer !important;
-    }
+  #zen-sidebar-icons-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
 
-    #new-tab-button {
-        display: none !important;
-    }
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.6rem !important;
+    flex-wrap: wrap;
 
-    #alltabs-button {
-        /*     display: none !important; */
+    &::before {
+      display: none !important;
     }
 
     & > toolbarbutton {
-        width: calc(100%) !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-
-        & * {
-            background: none !important;
-        }
+      width: fit-content !important;
+      flex: 1 !important;
     }
-
-    #zen-sidebar-icons-wrapper {
-        padding: 0 !important;
-        margin: 0 !important;
-
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 0.6rem !important;
-        flex-wrap: wrap;
-
-        &::before {
-            display: none !important;
-        }
-
-        & > toolbarbutton {
-            width: fit-content !important;
-            flex: 1 !important;
-        }
-    }
+  }
 }
 
 #appcontent {
-    position: relative !important;
-    overflow: visible !important;
+  position: relative !important;
+  overflow: visible !important;
 
-    #zen-appcontent-navbar-container {
-        position: absolute !important;
-        width: 100% !important;
-        z-index: 10;
-        padding-top: 0.4rem !important;
+  #zen-appcontent-navbar-container {
+    position: absolute !important;
+    width: 100% !important;
+    z-index: 10;
+    padding-top: 0.4rem !important;
 
-        #urlbar-container {
-            transition: min-width 200ms ease-in !important;
-            --urlbar-container-height: 30px !important;
+    #urlbar-container {
+      transition: min-width 200ms ease-in !important;
+      --urlbar-container-height: 30px !important;
 
-            #urlbar {
-                height: inherit !important;
-                border-radius: 2px !important;
-                border: 1px solid var(--border-el) !important;
+      #urlbar {
+        height: inherit !important;
+        border-radius: 2px !important;
+        border: 1px solid var(--border-el) !important;
 
-                background: linear-gradient(
-                    180deg,
-                    var(--bg-el-t),
-                    var(--bg-el-b)
-                ) !important;
+        background: linear-gradient(
+          180deg,
+          var(--bg-el-t),
+          var(--bg-el-b)
+        ) !important;
 
-                transition: border-color 200ms ease-in !important;
+        transition: border-color 200ms ease-in !important;
 
-                --urlbar-height: 50px !important;
+        --urlbar-height: 50px !important;
 
-                font-size: 16px !important;
+        font-size: 16px !important;
 
-                overflow: visible !important;
-
-                /*      urlbar changes color based on    */
-                #urlbar-background {
-                    transition: background 200ms ease-in-out;
-                }
-
-                .urlbar-input-container {
-                    overflow: visible !important;
-                    transition: padding-left 200ms ease-in-out;
-                }
-
-                & #identity-box {
-                    position: absolute !important;
-                    z-index: 9;
-                    left: 4px !important;
-                    top: 1px !important;
-                    height: 80% !important;
-                    opacity: 1;
-
-                    transition: opacity 200ms ease-in-out;
-
-                    #identity-icon-box {
-                        margin: 0 !important;
-                        padding: 0.3rem !important;
-                    }
-
-                    #identity-icon-label {
-                        display: none;
-                    }
-
-                    * {
-                        border-radius: 3px !important;
-                    }
-                }
-
-                &:is(
-                        [breakout][breakout-extend],
-                        [breakout][usertyping][focused]
-                    ) {
-                    position: absolute !important;
-                    min-width: 600px !important;
-
-                    z-index: 99;
-
-                    #urlbar-background {
-                        transition: none !important;
-                        background: #1d1d1d !important;
-                    }
-                }
-
-                &:has(#identity-box:not(.verifiedDomain, .localResource)) {
-                    .urlbar-input-container {
-                        padding-left: 2.4rem !important;
-                    }
-                }
-
-                &:has(.verifiedDomain, .localResource) {
-                    #identity-box {
-                        opacity: 0 !important;
-                        max-width: 0px !important;
-                        overflow: hidden !important;
-                    }
-                    #urlbar-background {
-                        background: #081a08 !important;
-                    }
-                }
-
-                &:has(.notSecure) {
-                    #urlbar-background {
-                        background: #1a080a !important;
-                    }
-                }
-
-                .urlbar-input-container {
-                    margin-top: 2px !important;
-                    padding-left: 0.6rem !important;
-
-                    #urlbar-input {
-                        letter-spacing: 0.05rem !important;
-                    }
-                }
-            }
-
-            * {
-                text-shadow: black 2px 2px !important;
-            }
-        }
-    }
-
-    #tabbrowser-tabbox {
         overflow: visible !important;
 
-        &::before {
-            content: "browse";
-            position: absolute;
-            top: 0;
-            left: 0.6rem;
-            transform: translateY(-50%);
-            font-weight: 800;
-
-            padding: 0 6px;
-
-            background-image: linear-gradient(
-                180deg,
-                transparent 6px,
-                var(--bg) 4px,
-                var(--bg) 10px,
-                transparent 10px
-            );
-            height: fit-content;
-            width: auto;
-
-            z-index: 99 !important;
-
-            text-shadow:
-                -2px 1px 1px var(--bg),
-                -2px 2px 1px var(--bg),
-                -1px 1px 1px var(--bg),
-                -1px 2px 1px var(--bg),
-                0px 1px 1px var(--bg),
-                0px 2px 1px var(--bg),
-                1px 1px 1px var(--bg),
-                1px 2px 1px var(--bg),
-                2px 1px 1px var(--bg),
-                2px 2px 1px var(--bg);
+        /*      urlbar changes color based on    */
+        #urlbar-background {
+          transition: background 200ms ease-in-out;
         }
+
+        .urlbar-input-container {
+          overflow: visible !important;
+          transition: padding-left 200ms ease-in-out;
+        }
+
+        & #identity-box {
+          position: absolute !important;
+          z-index: 9;
+          left: 4px !important;
+          top: 1px !important;
+          height: 80% !important;
+          opacity: 1;
+
+          transition: opacity 200ms ease-in-out;
+
+          #identity-icon-box {
+            margin: 0 !important;
+            padding: 0.3rem !important;
+          }
+
+          #identity-icon-label {
+            display: none;
+          }
+
+          * {
+            border-radius: 3px !important;
+          }
+        }
+
+        &:is(
+        [breakout][breakout-extend],
+        [breakout][usertyping][focused]
+        ) {
+          position: absolute !important;
+          min-width: 600px !important;
+
+          z-index: 99;
+
+          #urlbar-background {
+            transition: none !important;
+            background: #1d1d1d !important;
+          }
+        }
+
+        &:has(#identity-box:not(.verifiedDomain, .localResource)) {
+          .urlbar-input-container {
+            padding-left: 2.4rem !important;
+          }
+        }
+
+        &:has(.verifiedDomain, .localResource) {
+          #identity-box {
+            opacity: 0 !important;
+            max-width: 0px !important;
+            overflow: hidden !important;
+          }
+          #urlbar-background {
+            background: #081a08 !important;
+          }
+        }
+
+        &:has(.notSecure) {
+          #urlbar-background {
+            background: #1a080a !important;
+          }
+        }
+
+        .urlbar-input-container {
+          margin-top: 2px !important;
+          padding-left: 0.6rem !important;
+
+          #urlbar-input {
+            letter-spacing: 0.05rem !important;
+          }
+        }
+      }
+
+      * {
+        text-shadow: black 2px 2px !important;
+      }
     }
-    #tabbrowser-tabpanels {
-        * {
-            box-shadow: 0 0 0 0 #fff5 !important;
-        }
+  }
 
-        * {
-            border: none !important;
-            outline: none !important;
-        }
+  #tabbrowser-tabbox {
+    overflow: visible !important;
 
-        > hbox {
-            /* webview round */
-            border-radius: 1px !important;
-            border: 1px solid var(--border-el) !important;
+    &::before {
+      content: "browse";
+      position: absolute;
+      top: 0;
+      left: 0.6rem;
+      transform: translateY(-50%);
+      font-weight: 800;
 
-            * {
-                border: none !important;
-                outline: none !important;
-            }
-        }
+      padding: 0 6px;
+
+      background-image: linear-gradient(
+        180deg,
+        transparent 6px,
+        var(--bg) 4px,
+        var(--bg) 10px,
+        transparent 10px
+      );
+      height: fit-content;
+      width: auto;
+
+      z-index: 99 !important;
+
+      text-shadow:
+        -2px 1px 1px var(--bg),
+        -2px 2px 1px var(--bg),
+        -1px 1px 1px var(--bg),
+        -1px 2px 1px var(--bg),
+        0px 1px 1px var(--bg),
+        0px 2px 1px var(--bg),
+        1px 1px 1px var(--bg),
+        1px 2px 1px var(--bg),
+        2px 1px 1px var(--bg),
+        2px 2px 1px var(--bg);
     }
+  }
+  #tabbrowser-tabpanels {
+    * {
+      box-shadow: 0 0 0 0 #fff5 !important;
+    }
+
+    * {
+      border: none !important;
+      outline: none !important;
+    }
+
+    > hbox {
+      /* webview round */
+      border-radius: 1px !important;
+      border: 1px solid var(--border-el) !important;
+
+      * {
+        border: none !important;
+        outline: none !important;
+      }
+    }
+  }
 }
 
 body:has(#customization-container:not([hidden="true"])) {
-    #zen-appcontent-navbar-container {
-        min-width: 400px !important;
-        max-width: 400px !important;
+  #zen-appcontent-navbar-container {
+    min-width: 400px !important;
+    max-width: 400px !important;
 
-        &::before {
-            content: "editing controls" !important;
-        }
+    &::before {
+      content: "editing controls" !important;
     }
+  }
 
-    #zen-tabbox-wrapper {
-        display: none !important;
-    }
+  #zen-tabbox-wrapper {
+    display: none !important;
+  }
 }
 
 /* Holy, this is ghetto */
 /* Ok so what this does is make the navbar smaller so we arent able to drag it withing the webview window */
 /* body:not(:has(#customization-container:not([hidden="true"]))) #appcontent:has( #zen-tabbox-wrapper:hover ) #zen-appcontent-navbar-container */
 @keyframes slidein {
-    from {
-        transform: scaleX(10000);
-    }
+  from {
+    transform: scaleX(10000);
+  }
 
-    99% {
-        transform: scaleX(10000);
-    }
+  99% {
+    transform: scaleX(10000);
+  }
 
-    to {
-        transform: scaleX(1);
-    }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* debug navbar states (mainly for toolbarbutton debug) */
@@ -686,295 +678,290 @@ border-color: red !important;
 
 /* update width when in webview to not allow dragging when in webview */
 /* also disable this hack when we dont need it (aka minmode, fullscreen) */
-@media (-moz-bool-pref: "zen.view.sidebar-expanded"),
-    :root:not( [inFullscreen] ) {
-    body:has(#zen-tabbox-wrapper:hover)
-        :is(#nav-bar, #zen-appcontent-navbar-container) {
-        max-width: var(--sidebar-width) !important;
-    }
+@media (-moz-bool-pref: "zen.view.sidebar-expanded"), :root:not( [inFullscreen] ) {
+  body:has(#zen-tabbox-wrapper:hover)
+  :is(#nav-bar, #zen-appcontent-navbar-container) {
+    max-width: var(--sidebar-width) !important;
+  }
 
-    /* update width on customization end */
-    :is(body:has(#customization-container[hidden="true"]))
-        :is(#zen-appcontent-navbar-container, #nav-bar) {
-        animation-name: slidein;
-        animation-duration: 1s !important;
-        animation-iteration-count: once;
-    }
+  /* update width on customization end */
+  :is(body:has(#customization-container[hidden="true"]))
+  :is(#zen-appcontent-navbar-container, #nav-bar) {
+    animation-name: slidein;
+    animation-duration: 1s !important;
+    animation-iteration-count: once;
+  }
 }
+
 
 /* minimal mode */
 @media not (-moz-bool-pref: "zen.view.sidebar-expanded") {
-    :root {
-        --pad-header: 0px;
-    }
-    #zen-main-app-wrapper::before {
-        display: none !important;
-    }
+  :root {
+    --pad-header: 0px;
+  }
+  #zen-main-app-wrapper::before {
+    display: none !important;
+  }
 
-    #browser {
-        max-width: 10px !important;
+  #browser {
+    max-width: 10px !important;
 
-        #navigator-toolbox {
-            max-width: 10px !important;
-            width: 10px !important;
-            min-width: 10px !important;
+    #navigator-toolbox {
+      max-width: 10px !important;
+      width: 10px !important;
+      min-width: 10px !important;
+
+      padding: 0 !important;
+
+      resize: none !important;
+
+      #titlebar {
+        position: absolute !important;
+
+        left: -100px !important;
+        transform: translateX(-10px);
+
+        z-index: 101;
+
+        transition: left 200ms ease-in 500ms !important;
+
+        #TabsToolbar {
+          border: 1px solid var(--border-el) !important;
+          background: var(--sidebar) !important;
+
+          margin: auto 0 !important;
+          padding: 0.8rem 0.8rem !important;
+
+          max-height: 90vh !important;
+          min-height: 90vh !important;
+
+          #TabsToolbar-customization-target {
+            border: none !important;
+            background: transparent !important;
 
             padding: 0 !important;
+          }
+        }
+      }
 
-            resize: none !important;
+      &:hover,
+      & *:hover {
+        #titlebar {
+          left: 15px !important;
+          transition: left 200ms ease-in 0ms !important;
+        }
+      }
 
-            #titlebar {
-                position: absolute !important;
+      .toolbarbutton-icon {
+        background: none !important;
+      }
 
-                left: -100px !important;
-                transform: translateX(-10px);
+      #tabbrowser-arrowscrollbox {
+        /*                 max-width: max-content !important; */
+      }
 
-                z-index: 101;
+      #TabsToolbar-customization-target {
+        max-width: fit-content;
+        min-width: fit-content;
 
-                transition: left 200ms ease-in 500ms !important;
+        > toolbarbutton > * {
+          background: none !important;
+        }
+      }
 
-                #TabsToolbar {
-                    border: 1px solid var(--border-el) !important;
-                    background: var(--sidebar) !important;
+      tab {
+        --separation-anim-time: 200ms;
+        --separation-dist: 4px;
 
-                    margin: auto 0 !important;
-                    padding: 0.8rem 0.8rem !important;
+        transition: background 200ms ease-in-out !important;
+        margin: 0 !important;
 
-                    max-height: 90vh !important;
-                    min-height: 90vh !important;
-
-                    #TabsToolbar-customization-target {
-                        border: none !important;
-                        background: transparent !important;
-
-                        padding: 0 !important;
-                    }
-                }
-            }
-
-            &:hover,
-            & *:hover {
-                #titlebar {
-                    left: 15px !important;
-                    transition: left 200ms ease-in 0ms !important;
-                }
-            }
-
-            .toolbarbutton-icon {
-                background: none !important;
-            }
-
-            #tabbrowser-arrowscrollbox {
-                /*                 max-width: max-content !important; */
-            }
-
-            #TabsToolbar-customization-target {
-                max-width: fit-content;
-                min-width: fit-content;
-
-                > toolbarbutton > * {
-                    background: none !important;
-                }
-            }
-
-            tab {
-                --separation-anim-time: 200ms;
-                --separation-dist: 4px;
-
-                transition: background 200ms ease-in-out !important;
-                margin: 0 !important;
-
-                & > :first-child:hover {
-                    background: #ddd1 !important;
-                    border-radius: 3px;
-                }
-
-                .tab-label-container {
-                    position: absolute !important;
-                    left: calc(50% - 5px);
-                    top: -50%;
-
-                    display: flex !important;
-
-                    & > label {
-                        background: #4a4a4a90;
-                        padding: 0.2rem !important;
-                        line-height: 7px !important;
-                        clip-path: xywh(2px 0 16px 100% round 3px);
-                    }
-                }
-
-                .tab-icon-image {
-                    position: relative !important;
-
-                    left: 0px;
-                    top: 0;
-
-                    filter: drop-shadow(0px 0px 0px #fff0);
-
-                    transition:
-                        left var(--separation-anim-time) ease-in,
-                        top var(--separation-anim-time) ease-in,
-                        filter var(--separation-anim-time) ease-in !important;
-                }
-
-                &[selected] .tab-icon-image {
-                    left: calc(var(--separation-dist) / -2);
-                    top: calc(var(--separation-dist) / -2);
-                    filter: drop-shadow(
-                        var(--separation-dist) var(--separation-dist) 0px #fff4
-                    );
-                }
-            }
+        & > :first-child:hover {
+          background: #ddd1 !important;
+          border-radius: 3px;
         }
 
-        #zen-tabbox-wrapper {
-            left: 5px !important;
-            min-width: calc(100vw - 2px) !important;
+        .tab-label-container {
+          position: absolute !important;
+          left: calc(50% - 5px);
+          top: -50%;
+
+          display: flex !important;
+
+          & > label {
+            background: #4a4a4a90;
+            padding: 0.2rem !important;
+            line-height: 7px !important;
+            clip-path: xywh(2px 0 16px 100% round 3px);
+          }
         }
+
+        .tab-icon-image {
+          position: relative !important;
+
+          left: 0px;
+          top: 0;
+
+          filter: drop-shadow(0px 0px 0px #fff0);
+
+          transition:
+            left var(--separation-anim-time) ease-in,
+            top var(--separation-anim-time) ease-in,
+            filter var(--separation-anim-time) ease-in !important;
+        }
+
+        &[selected] .tab-icon-image {
+          left: calc(var(--separation-dist) / -2);
+          top: calc(var(--separation-dist) / -2);
+          filter: drop-shadow(
+            var(--separation-dist) var(--separation-dist) 0px #fff4
+          );
+        }
+      }
     }
 
-    #TabsToolbar,
     #zen-tabbox-wrapper {
-        /*  top padding    */
-        padding-top: 10px !important;
-
-        /*   "browse" text offset   */
-        #tabbrowser-tabbox::before {
-            top: 10px;
-        }
+      left: 5px !important;
+      min-width: calc(100vw - 2px) !important;
     }
+  }
 
-    /*remove "tabs" text */
-    #TabsToolbar-customization-target::before {
-        content: "" !important;
+  #TabsToolbar,
+  #zen-tabbox-wrapper {
+    /*  top padding    */
+    padding-top: 10px !important;
+
+    /*   "browse" text offset   */
+    #tabbrowser-tabbox::before {
+      top: 10px;
     }
+  }
+
+  /*remove "tabs" text */
+  #TabsToolbar-customization-target::before {
+    content: "" !important;
+  }
 }
+
 
 /* Fullscreen overrides */
 :root[inFullscreen] {
-    #zen-main-app-wrapper {
-        padding: 0.6rem !important;
-        &::before {
-            content: "" !important;
-        }
+  #zen-main-app-wrapper {
+    padding: 0.6rem !important;
+    &::before {
+      content: "" !important;
     }
+  }
 
-    #zen-appcontent-navbar-container::before {
-        content: "" !important;
+  #zen-appcontent-navbar-container::before {
+    content: "" !important;
+  }
+
+  #browser {
+    width: 0 !important;
+    max-width: 0 !important;
+    grid-template-columns: 0px;
+
+    #zen-tabbox-wrapper {
+      margin-left: -25px !important;
+      min-width: calc(100vw - 5px) !important;
+
+      left: 1.4rem !important;
+      top: 0 !important;
+
+      min-height: calc(100vh - 5px) !important;
     }
+  }
 
-    #browser {
-        width: 0 !important;
-        max-width: 0 !important;
-        grid-template-columns: 0px;
 
-        #zen-tabbox-wrapper {
-            margin-left: -25px !important;
-            min-width: calc(100vw - 5px) !important;
-
-            left: 1.4rem !important;
-            top: 0 !important;
-
-            min-height: calc(100vh - 5px) !important;
-        }
+  #tabbrowser-tabbox {
+    width: 100% !important;
+    height: 100% !important;
+    &::before {
+      content: "";
     }
-
-    #tabbrowser-tabbox {
-        width: 100% !important;
-        height: 100% !important;
-        &::before {
-            content: "";
-        }
-    }
+  }
 }
 
 /* controls behaves the same for fullscreen and minimal mode */
 @media not (-moz-bool-pref: "zen.view.sidebar-expanded"), :root[inFullscreen] {
-    /* specificity hack vol2 */
-    #zen-appcontent-navbar-container#zen-appcontent-navbar-container#zen-appcontent-navbar-container {
-        position: absolute !important;
-        display: flex !important;
-        width: 100vw !important;
-        z-index: 3 !important;
+  /* specificity hack vol2 */
+  #zen-appcontent-navbar-container#zen-appcontent-navbar-container#zen-appcontent-navbar-container {
+    position: absolute !important;
+    display: flex !important;
+    width: 100vw !important;
+    z-index: 3 !important;
 
-        &::before {
-            content: "" !important;
-        }
-
-        & > #nav-bar {
-            padding: 1rem 10vw !important;
-
-            /* Thanks Kevin, this specificity hack is useful! (5, 0, 0) specificity from fixed pos, needed to repeat ids to override the normal style */
-            &
-                > :is(
-                    #PanelUI-button#PanelUI-button#PanelUI-button,
-                    .titlebar-buttonbox-container
-                ) {
-                position: relative !important;
-            }
-
-            & > #nav-bar-customization-target {
-                width: 100% !important;
-                min-width: 0 !important;
-                max-width: 100% !important;
-                flex-direction: row !important;
-
-                & > #urlbar-container {
-                    width: 100% !important;
-                    min-width: 0 !important;
-                    max-width: 100% !important;
-                }
-            }
-        }
+    &::before {
+      content: "" !important;
     }
+
+    & > #nav-bar {
+      padding: 1rem 10vw !important;
+
+      /* Thanks Kevin, this specificity hack is useful! (5, 0, 0) specificity from fixed pos, needed to repeat ids to override the normal style */
+      & > :is( #PanelUI-button#PanelUI-button#PanelUI-button, .titlebar-buttonbox-container ) {
+        position: relative !important;
+      }
+
+      & > #nav-bar-customization-target {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        flex-direction: row !important;
+
+        & > #urlbar-container {
+          width: 100% !important;
+          min-width: 0 !important;
+          max-width: 100% !important;;
+        }
+      }
+    }
+  }
 }
 
 @keyframes menupopup-slide {
-    from {
-        max-height: 0 !important;
-        min-height: 0 !important;
-    }
-    to {
-        max-height: 100% !important;
-        min-height: 100% !important;
-    }
+  from {
+    max-height: 0 !important;
+    min-height: 0 !important;
+  }
+  to {
+    max-height: 100% !important;
+    min-height: 100% !important;
+  }
 }
 
 :host(.in-menulist) arrowscrollbox {
-    max-width: 0 !important;
-    min-width: 0 !important;
+  max-width: 0 !important;
+  min-width: 0 !important;
 }
 /* popups */
 menupopup,
 panel {
+  animation: menupopup-slide 1s ease-in forwards;
+  --panel-background: linear-gradient( 90deg, var( --bg-el-t ), var( --bg-el-b ) ) !important;
+
+  * {
+    font-family: "ProggyCleanTT" !important;
+    font-size: 16px !important;
     animation: menupopup-slide 1s ease-in forwards;
-    --panel-background: linear-gradient(
-        90deg,
-        var(--bg-el-t),
-        var(--bg-el-b)
-    ) !important;
+  }
+  arrowscrollbox {
+    border-radius: 3px !important;
+  }
 
-    * {
-        font-family: "ProggyCleanTT" !important;
-        font-size: 16px !important;
-        animation: menupopup-slide 1s ease-in forwards;
+
+  & > * {
+    transition: padding-left 200ms ease-in-out;
+
+    & > menupopup {
+      & > *:not( menuseparator ):hover {
+        padding-left: 1.2rem !important;
+      }
     }
-    arrowscrollbox {
-        border-radius: 3px !important;
+
+    &:not( menuseparator ):hover {
+      padding-left: 2.6rem !important;
     }
-
-    & > * {
-        transition: padding-left 200ms ease-in-out;
-
-        & > menupopup {
-            & > *:not(menuseparator):hover {
-                padding-left: 1.2rem !important;
-            }
-        }
-
-        &:not(menuseparator):hover {
-            padding-left: 2.6rem !important;
-        }
-    }
+  }
 }
